@@ -1,0 +1,17 @@
+C:\DEVELOPMENT\COMTACTI\CONTROLE.OD\controle.od\Controle.OD.UI\Controle.OD.Domain\bin\Debug\Controle.OD.Domain.dll
+C:\DEVELOPMENT\COMTACTI\CONTROLE.OD\controle.od\Controle.OD.UI\Controle.OD.Domain\bin\Debug\Controle.OD.Domain.pdb
+C:\DEVELOPMENT\COMTACTI\CONTROLE.OD\controle.od\Controle.OD.UI\Controle.OD.Domain\bin\Debug\Controle.OD.Models.dll
+C:\DEVELOPMENT\COMTACTI\CONTROLE.OD\controle.od\Controle.OD.UI\Controle.OD.Domain\bin\Debug\DnsClient.dll
+C:\DEVELOPMENT\COMTACTI\CONTROLE.OD\controle.od\Controle.OD.UI\Controle.OD.Domain\bin\Debug\MongoDB.Bson.dll
+C:\DEVELOPMENT\COMTACTI\CONTROLE.OD\controle.od\Controle.OD.UI\Controle.OD.Domain\bin\Debug\MongoDB.Driver.Core.dll
+C:\DEVELOPMENT\COMTACTI\CONTROLE.OD\controle.od\Controle.OD.UI\Controle.OD.Domain\bin\Debug\MongoDB.Driver.dll
+C:\DEVELOPMENT\COMTACTI\CONTROLE.OD\controle.od\Controle.OD.UI\Controle.OD.Domain\bin\Debug\System.Buffers.dll
+C:\DEVELOPMENT\COMTACTI\CONTROLE.OD\controle.od\Controle.OD.UI\Controle.OD.Domain\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\DEVELOPMENT\COMTACTI\CONTROLE.OD\controle.od\Controle.OD.UI\Controle.OD.Domain\bin\Debug\Controle.OD.Models.pdb
+C:\DEVELOPMENT\COMTACTI\CONTROLE.OD\controle.od\Controle.OD.UI\Controle.OD.Domain\bin\Debug\DnsClient.xml
+C:\DEVELOPMENT\COMTACTI\CONTROLE.OD\controle.od\Controle.OD.UI\Controle.OD.Domain\bin\Debug\MongoDB.Bson.xml
+C:\DEVELOPMENT\COMTACTI\CONTROLE.OD\controle.od\Controle.OD.UI\Controle.OD.Domain\bin\Debug\MongoDB.Driver.xml
+C:\DEVELOPMENT\COMTACTI\CONTROLE.OD\controle.od\Controle.OD.UI\Controle.OD.Domain\bin\Debug\MongoDB.Driver.Core.xml
+C:\DEVELOPMENT\COMTACTI\CONTROLE.OD\controle.od\Controle.OD.UI\Controle.OD.Domain\obj\Debug\Controle.OD.Domain.csprojResolveAssemblyReference.cache
+C:\DEVELOPMENT\COMTACTI\CONTROLE.OD\controle.od\Controle.OD.UI\Controle.OD.Domain\obj\Debug\Controle.OD.Domain.dll
+C:\DEVELOPMENT\COMTACTI\CONTROLE.OD\controle.od\Controle.OD.UI\Controle.OD.Domain\obj\Debug\Controle.OD.Domain.pdb
