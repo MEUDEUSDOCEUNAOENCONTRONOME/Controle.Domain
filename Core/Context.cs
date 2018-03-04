@@ -26,7 +26,7 @@ namespace Domain.Core
         }
         #endregion
         #region Collections
-        
+
         public static void CreateCollection(string collectionName)
         {
             db.CreateCollection(collectionName);
@@ -35,7 +35,7 @@ namespace Domain.Core
         {
             //if(!CollectionExistsAsync(collectionName).Result)
             //    db.CreateCollection(collectionName);
-            
+
             return db.GetCollection<T>(collectionName);
         }
         public static IMongoCollection<T> GetCollection<T>()
@@ -76,33 +76,39 @@ namespace Domain.Core
             return document;
         }
 
-        public static void Update<T>(MongoDB.Driver.FilterDefinition<T> filter, Dictionary<string, object> properties, bool updateOne)
+        public static void Update<T>(MongoDB.Driver.FilterDefinition<T> filter, Dictionary<string, object> properties, bool updateOne, bool IsUpsert)
         {
             var update = Builders<T>.Update.Set(properties.First().Key, properties.First().Value);
             foreach (var property in properties)
             {
+                //to implement multiple updates in a decent way, not done yet, must do task.
                 update.AddToSet(property.Key, property.Value);
+                if (updateOne)
+                    GetCollection<T>()
+                        .UpdateOneAsync(filter, update, new UpdateOptions { IsUpsert = IsUpsert });
+                else
+                    GetCollection<T>()
+                        .UpdateMany(filter, update, new UpdateOptions { IsUpsert = IsUpsert });
             }
-            if(updateOne)
-                GetCollection<T>()
-                    .UpdateOneAsync(filter, update, new UpdateOptions { IsUpsert = true });
-            else
-                GetCollection<T>()
-                    .UpdateMany(filter, update, new UpdateOptions { IsUpsert = true });
-            
+
         }
         public static void Update<T>(MongoDB.Driver.FilterDefinition<T> filter, Dictionary<string, object> properties)
         {
-            Update<T>(filter, properties, false);
+            Update<T>(filter, properties, false, true);
+        }
+
+        public static void Update<T>(MongoDB.Driver.FilterDefinition<T> filter, Dictionary<string, object> properties, bool updateOne)
+        {
+            Update<T>(filter, properties, false, true);
         }
 
         public static void Delete<T>(FilterDefinition<T> filter, bool DeleteOne)
         {
-            if(DeleteOne)
-                GetCollection<T>().DeleteOne(filter); 
+            if (DeleteOne)
+                GetCollection<T>().DeleteOne(filter);
             else
                 GetCollection<T>().DeleteMany(filter);
-            
+
         }
         public static void Delete<T>(FilterDefinition<T> filter)
         {
