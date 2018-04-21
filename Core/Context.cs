@@ -120,9 +120,18 @@ namespace Domain.Core
             return GetCollection<T>().FindAsync(filter).Result.ToList<T>();
         }
 
+        public static List<T> GetDocuments<T>(string collectionName, FilterDefinition<T> filter)
+        {
+            return GetCollection<T>(collectionName).FindAsync(filter).Result.ToList<T>();
+        }
+
         public static T GetDocument<T>(FilterDefinition<T> filter)
         {
             return GetCollection<T>().FindAsync(filter).Result.SingleOrDefault<T>();
+        }
+        public static T GetDocument<T>(string collectionName, FilterDefinition<T> filter)
+        {
+            return GetCollection<T>(collectionName).FindAsync(filter).Result.SingleOrDefault<T>();
         }
         #endregion
     }
