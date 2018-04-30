@@ -8,12 +8,16 @@ Framework de otimização de utilizações básicas do MongoDB. Útil, mas não 
 Configure the database using a class named as Configuration:
 
 
+{
+
 using Domain;
 using Domain.Core;
 using MongoDB.Driver;
 
+
 namespace YourConfigurationNamespace
 {
+
     public class ConfigDB
     {
         public ConfigDB()
@@ -29,12 +33,15 @@ namespace YourConfigurationNamespace
             Context.Dispose();
         }
     }
+    
 }
 
+}
 
 
 You can start writing your Model's code, the framework use the Mongodriver properties typification. Follow the example:
 
+{
 
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson.Serialization.IdGenerators;
@@ -64,11 +71,13 @@ namespace YourModelsNamespace
     }
 }
 
-
+}
 
 In the database operations class you will to inherit the Configuration class that you created, in this example, the name of the class
 is "ConfigDB". So no worries about connection just inherit the responsible class.
 And then you can start to write your database operations code, you can follow this example:
+
+{
 
 namespace YourDBOperationsNamespace
 {
@@ -116,6 +125,8 @@ namespace YourDBOperationsNamespace
             Context.Delete<User>(filter);
         }
     }
+}
+
 }
 
 Make good usage ;) .
