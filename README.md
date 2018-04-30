@@ -7,12 +7,12 @@ Framework de otimização de utilizações básicas do MongoDB. Útil, mas não 
 
 Configure the database using a class named as Configuration:
 
-====================================================================================================================================
+
 using Domain;
 using Domain.Core;
 using MongoDB.Driver;
 
-namespace <<YourConfigurationNamespace>>
+namespace YourConfigurationNamespace
 {
     public class ConfigDB
     {
@@ -20,8 +20,8 @@ namespace <<YourConfigurationNamespace>>
         {
             Configuration configuration = new Configuration();
             Connection conn = new Connection();
-            configuration.dbName = <<DatabaseName>>;
-            configuration.mongoUrl = new MongoUrl(<<YourUrlConfiguration>>);
+            configuration.dbName = "DatabaseName";
+            configuration.mongoUrl = new MongoUrl("YourUrlConfiguration");
             Context.Initializer(configuration);
         }
         ~ConfigDB()
@@ -30,26 +30,32 @@ namespace <<YourConfigurationNamespace>>
         }
     }
 }
-====================================================================================================================================
+
 
 
 You can start writing your Model's code, the framework use the Mongodriver properties typification. Follow the example:
-====================================================================================================================================
+
 
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson.Serialization.IdGenerators;
 using System;
 using System.Collections.Generic;
 
-namespace <<YourModelsNamespace>>
+namespace YourModelsNamespace
 {
     public class User
     {
+        
         [BsonId(IdGenerator = typeof(StringObjectIdGenerator))]
+        
         public string ID { get; set; }
+        
         public bool deleted { get; set; } = false;
+        
         public bool active { get; set; } = true;
+        
         [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
+       
         public DateTime creationDate { get; set; } = DateTime.Now;
         
         public string login { get; set; }
@@ -58,18 +64,19 @@ namespace <<YourModelsNamespace>>
     }
 }
 
-====================================================================================================================================
+
 
 In the database operations class you will to inherit the Configuration class that you created, in this example, the name of the class
 is "ConfigDB". So no worries about connection just inherit the responsible class.
 And then you can start to write your database operations code, you can follow this example:
 
-====================================================================================================================================
-
-namespace <<YourDBOperationsNamespace>>
+namespace YourDBOperationsNamespace
 {
+
     public class UserDB : ConfigDB
+    
     {
+    
         public User InsertUser(User user)
         {
             return Context.Insert<User>(user);
@@ -110,8 +117,5 @@ namespace <<YourDBOperationsNamespace>>
         }
     }
 }
-
-====================================================================================================================================
-
 
 Make good usage ;) .
