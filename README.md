@@ -8,8 +8,6 @@ Framework de otimização de utilizações básicas do MongoDB. Útil, mas não 
 Configure the database using a class named as Configuration:
 
 
-{
-
 using Domain;
 using Domain.Core;
 using MongoDB.Driver;
@@ -36,7 +34,6 @@ namespace YourConfigurationNamespace
     
 }
 
-}
 
 
 You can start writing your Model's code, the framework use the Mongodriver properties typification. Follow the example:
