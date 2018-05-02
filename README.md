@@ -90,24 +90,24 @@ And then you can start to write your database operations code, you can follow th
 
             public User FindUserByID(string ID)
             {
-                FilterDefinition<User> filter = Builders<User>.Filter.Where(s => s.ID == ID);
+                FilterDefinition<User> filter = Builders<User>.Filter.Where(u => u.ID == ID);
                 return Context.GetDocument<User>(filter);
             }
 
             public User FindUserByLoginAndPassword(string login, string password)
             {
-                FilterDefinition<User> filter = Builders<User>.Filter.Where(s => s.login == login && s.password == password && s.active == true);
+                FilterDefinition<User> filter = Builders<User>.Filter.Where(u => u.login == login && u.password == password && u.active == true);
                 return Context.GetDocument<User>(filter);
             }
 
             public List<User> ListActiveUsers()
             {
-                FilterDefinition<User> filter = Builders<User>.Filter.Where(s => s.active == true);
+                FilterDefinition<User> filter = Builders<User>.Filter.Where(u => u.active == true);
                 return Context.GetDocuments<User>(filter);
             }
             public List<User> ListNotActiveUsers()
             {
-                FilterDefinition<User> filter = Builders<User>.Filter.Where(s => s.active == false);
+                FilterDefinition<User> filter = Builders<User>.Filter.Where(u => u.active == false);
                 return Context.GetDocuments<User>(filter);
             }
             public User UpdateUserByID(string ID, Dictionary<string, object> properties)
@@ -126,4 +126,4 @@ And then you can start to write your database operations code, you can follow th
 
 
 
-Make good usage ;) .
+Have a nice time using ;) .
